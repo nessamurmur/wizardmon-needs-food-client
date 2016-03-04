@@ -13,17 +13,6 @@ export interface HungerStoreAction {
   response: WizardmonState;
 };
 
-export function getLastFed(): void {
-  getJSON("http://localhost:4000/digimon/niftyn8", (response) => {
-    setLastFed(response);
-  });
-}
-
-function feed(data: WizardmonState & any): void {
-  patchJSON("http://localhost:4000/digimon/niftyn8", data, (response): void => {
-    setLastFed(response);
-  });
-}
 
 function setLastFed(response) {
   _.merge(response.data, {last_fed: Date.parse(response.data.last_fed)});
@@ -34,10 +23,8 @@ export const hunger = (state: WizardmonState, action: HungerStoreAction) => {
   switch (action.type) {
   case HungerAction.Feed:
     let newState = _.merge(state, {last_fed: new Date()});
-    feed({ "digimon": newState });
-    return state;
+    return newState;
   case HungerAction.Update:
-    getLastFed();
     return state;
   case HungerAction.SetLastFed:
     return action.response;

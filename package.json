@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild": "npm install && typings install",
     "build": "webpack",
-    "dev-server": "webpack-dev-server",
+    "dev-server": "webpack-dev-server --https",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "@niftyn8",
