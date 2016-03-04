@@ -6,7 +6,7 @@
   <script src="assets/bundle.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('digimon_service.js', { scope: '/' }).then(function(reg) {
+      navigator.serviceWorker.register('digimon_service.js', { scope: '/wizardmon-needs-food-client/' }).then(function(reg) {
         console.log('Registration succeeded. Scope is ' + reg.scope);
       }).catch(function(error) {
         console.log('Registration failed with ' + error);

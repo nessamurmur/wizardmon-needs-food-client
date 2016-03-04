@@ -2,9 +2,9 @@ this.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll([
-        '/assets/bundle.js',
-        '/assets/workers/hunger_worker.js',
-        '/index.html'
+        '/wizardmon-needs-food-client/assets/bundle.js',
+        '/wizardmon-needs-food-client/assets/workers/hunger_worker.js',
+        '/wizardmon-needs-food-client/index.html'
       ]);
     })
   );
