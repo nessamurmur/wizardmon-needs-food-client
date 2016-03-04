@@ -15,7 +15,6 @@ class Wizardmon extends React.Component<WizardmonProps, WizardmonState> {
     hungerStore.subscribe(() => {
       this.setState(hungerStore.getState());
     });
-    window.setInterval(() => { hungerStore.dispatch({type: HungerAction.Update}); }, 10000);
   }
 
   feed(): void {
