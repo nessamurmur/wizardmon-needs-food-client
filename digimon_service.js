@@ -4,7 +4,8 @@ this.addEventListener('install', function(event) {
       return cache.addAll([
         '/wizardmon-needs-food-client/assets/bundle.js',
         '/wizardmon-needs-food-client/assets/workers/hunger_worker.js',
-        '/wizardmon-needs-food-client/index.html'
+        '/wizardmon-needs-food-client/index.html',
+        '/wizardmon-needs-food-client/'
       ]);
     })
   );
