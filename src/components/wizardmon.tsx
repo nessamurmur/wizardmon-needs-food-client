@@ -23,7 +23,7 @@ class Wizardmon extends React.Component<WizardmonProps, WizardmonState> {
 
   renderHunger() {
     let timeElapsed = new Date().getTime() - this.state.last_fed.getTime();
-    let hunger = timeElapsed > 20000 ? "Hungry!" : "Full!";
+    let hunger = timeElapsed > 20000 ? "hungry!" : "full!";
     return hunger;
   }
 
@@ -31,7 +31,7 @@ class Wizardmon extends React.Component<WizardmonProps, WizardmonState> {
     return(
       <div>
         <img src="assets/images/wizardmon.gif"></img>
-        <p className="wizardmon-hunger">Last Fed: {this.renderHunger()}</p>
+        <p className="wizardmon-hunger">I'm {this.renderHunger()}</p>
         <button onClick={this.feed}>Feed</button>
       </div>
     );
