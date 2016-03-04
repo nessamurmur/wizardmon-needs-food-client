@@ -1,0 +1,28 @@
+{
+  "name": "wizardmon-needs-food-client",
+  "version": "0.1.0",
+  "description": "Client-side for Wizardmon Needs Food",
+  "main": "src/main.js",
+  "scripts": {
+    "prebuild": "npm install && typings install",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@niftyn8",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-jsx-loader": "^0.2.1",
+    "ts-loader": "^0.8.1",
+    "typescript": "^1.8.7",
+    "typings": "^0.6.9",
+    "webpack": "^1.12.14"
+  },
+  "dependencies": {
+    "lodash": "^4.6.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.0",
+    "redux": "^3.3.1"
+  }
+}
