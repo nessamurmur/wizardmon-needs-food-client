@@ -1,6 +1,6 @@
-# Wizard Needs Food UI
+# Wizard Needs Food
 
-Coming soon...
+A Web Worker (Maybe soon, Service Worker) demo.
 
 ## Development
 
@@ -8,7 +8,7 @@ Coming soon...
 npm install -g typings
 npm install
 typings install
-npm run watch
+npm run dev-server
 ```
 
 ## Test
