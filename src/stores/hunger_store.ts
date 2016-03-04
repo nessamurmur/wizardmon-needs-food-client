@@ -10,7 +10,7 @@ export const hunger = (state, action: HungerStoreAction) => {
   switch (action.type) {
   case HungerAction.Feed:
     return _.merge(state, {hunger: state.hunger - 1});
-  case HungerAction.NotFeed:
+  case HungerAction.Update:
     return _.merge(state, {hunger: state.hunger + 1});
   default:
     return state;

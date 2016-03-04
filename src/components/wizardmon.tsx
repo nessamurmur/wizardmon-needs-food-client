@@ -15,14 +15,11 @@ class Wizardmon extends React.Component<WizardmonProps, WizardmonState> {
     hungerStore.subscribe(() => {
       this.setState(hungerStore.getState());
     });
+    window.setInterval(() => { hungerStore.dispatch({type: HungerAction.Update}) }, 1000)
   }
 
   feed(): void {
     hungerStore.dispatch({ type: HungerAction.Feed });
-  }
-
-  unfeed(): void {
-    hungerStore.dispatch({ type: HungerAction.NotFeed });
   }
 
   render() {
@@ -31,7 +28,6 @@ class Wizardmon extends React.Component<WizardmonProps, WizardmonState> {
         <img src="assets/images/wizardmon.gif"></img>
         <p className="wizardmon-hunger">Hunger: {this.state.hunger}</p>
         <button onClick={this.feed}>Feed</button>
-        <button onClick={this.unfeed}>Unfeed</button>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 enum HungerAction {
   Feed,
-  NotFeed
+  Update
 }
 
 export default HungerAction;
