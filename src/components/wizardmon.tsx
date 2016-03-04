@@ -1,28 +1,6 @@
-import * as _ from "lodash";
 import * as React from "react";
-import { createStore } from "redux";
-
-enum HungerAction {
-  Feed,
-  NotFeed
-}
-
-class HungerStoreAction {
-  type: HungerAction;
-};
-
-const hunger = (state: WizardmonState = {hunger: 0}, action: HungerStoreAction) => {
-  switch (action.type) {
-  case HungerAction.Feed:
-    return _.merge(state, {hunger: state.hunger - 1});
-  case HungerAction.NotFeed:
-    return _.merge(state, {hunger: state.hunger + 1});
-  default:
-    return state;
-  }
-};
-
-const hungerStore = createStore(hunger);
+import HungerAction from "../actions/hunger_actions.ts";
+import hungerStore from "../stores/hunger_store.ts";
 
 interface WizardmonProps {}
 
