@@ -1,6 +1,7 @@
 enum HungerAction {
   Feed,
-  Update
+  Update,
+  SetLastFed
 }
 
 export default HungerAction;
