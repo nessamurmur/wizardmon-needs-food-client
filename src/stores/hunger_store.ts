@@ -8,13 +8,9 @@ export interface WizardmonStateWrapper {
   digimon: WizardmonState;
 };
 
-export interface Response {
-  data: WizardmonState;
-};
-
 export interface HungerStoreAction {
   type: HungerAction;
-  response: Response;
+  response: WizardmonState;
 };
 
 export function getLastFed(): void {
@@ -30,6 +26,7 @@ function feed(data: WizardmonState & any): void {
 }
 
 function setLastFed(response) {
+  _.merge(response.data, {last_fed: Date.parse(response.data.last_fed)});
   hungerStore.dispatch({ type: HungerAction.SetLastFed, response });
 }
 
@@ -43,7 +40,7 @@ export const hunger = (state: WizardmonState, action: HungerStoreAction) => {
     getLastFed();
     return state;
   case HungerAction.SetLastFed:
-    return action.response.data;
+    return action.response;
   default:
     return state;
   }

@@ -26,11 +26,17 @@ class Wizardmon extends React.Component<WizardmonProps, WizardmonState> {
     hungerStore.dispatch({ type: HungerAction.Feed });
   }
 
+  renderHunger() {
+    let timeElapsed = new Date().getTime() - this.state.last_fed.getTime();
+    let hunger = timeElapsed > 20000 ? "Hungry!" : "Full!";
+    return hunger;
+  }
+
   render() {
     return(
       <div>
         <img src="assets/images/wizardmon.gif"></img>
-        <p className="wizardmon-hunger">Last Fed: {this.state.last_fed.toString()}</p>
+        <p className="wizardmon-hunger">Last Fed: {this.renderHunger()}</p>
         <button onClick={this.feed}>Feed</button>
       </div>
     );
