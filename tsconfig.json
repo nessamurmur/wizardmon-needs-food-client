@@ -23,7 +23,7 @@
     "buildOnSave": false,
     "files": [
         "src/main.tsx",
-        "typings/main.d.ts"
+        "typings/browser.d.ts"
     ],
     "atom": {
         "rewriteTsconfig": false
